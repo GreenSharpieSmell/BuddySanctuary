@@ -21,10 +21,13 @@ position = Vector2(640, 360)
 
 [node name="ZoneNav" parent="." instance=ExtResource("4_zone_nav")]
 
-[node name="BuddyInfoCard" parent="." instance=ExtResource("5_buddy_info_card")]
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 5
 
-[node name="ExpeditionPanel" parent="." instance=ExtResource("6_expedition_panel")]
+[node name="BuddyInfoCard" parent="UILayer" instance=ExtResource("5_buddy_info_card")]
 
-[node name="DecorationShop" parent="." instance=ExtResource("7_decoration_shop")]
+[node name="ExpeditionPanel" parent="UILayer" instance=ExtResource("6_expedition_panel")]
+
+[node name="DecorationShop" parent="UILayer" instance=ExtResource("7_decoration_shop")]
 
 [node name="WelcomeBack" parent="." instance=ExtResource("8_welcome_back")]

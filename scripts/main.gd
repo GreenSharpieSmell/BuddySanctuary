@@ -20,9 +20,9 @@ const ZONE_SCENES := {
 @onready var camera: Camera2D              = $Camera2D
 @onready var hud: CanvasLayer              = $HUD
 @onready var zone_nav: ZoneNav             = $ZoneNav
-@onready var buddy_info_card: PanelContainer = $BuddyInfoCard
-@onready var expedition_panel: PanelContainer = $ExpeditionPanel
-@onready var decoration_shop: DecorationShop  = $DecorationShop
+@onready var buddy_info_card: PanelContainer = $UILayer/BuddyInfoCard
+@onready var expedition_panel: PanelContainer = $UILayer/ExpeditionPanel
+@onready var decoration_shop: DecorationShop  = $UILayer/DecorationShop
 @onready var welcome_back: CanvasLayer       = $WelcomeBack
 
 
