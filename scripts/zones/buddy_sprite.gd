@@ -44,10 +44,10 @@ var brain := BuddyBrain.new()
 # Depth sorting constants
 # ---------------------------------------------------------------------------
 
-const DEPTH_SCALE_MIN: float = 0.7   # back of depth band — smaller
-const DEPTH_SCALE_MAX: float = 1.0   # front — full size
-const DEPTH_Y_MIN:     float = 300.0 # y position = back
-const DEPTH_Y_MAX:     float = 600.0 # y position = front
+const DEPTH_SCALE_MIN: float = 1.5   # back of depth band — slightly smaller
+const DEPTH_SCALE_MAX: float = 2.0   # front — full size
+const DEPTH_Y_MIN:     float = 350.0 # y position = back (on the grass)
+const DEPTH_Y_MAX:     float = 650.0 # y position = front
 
 # Accessory slot names in the same order as appearance.accessory_indices
 const ACCESSORY_SLOTS: Array[String] = ["head", "neck", "held", "back", "feet"]

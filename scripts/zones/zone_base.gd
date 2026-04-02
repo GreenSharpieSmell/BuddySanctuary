@@ -35,8 +35,8 @@ signal buddy_clicked(buddy_data: BuddyData)
 # ---------------------------------------------------------------------------
 
 const BUDDY_SCENE:        PackedScene = preload("res://scenes/buddy/buddy.tscn")
-const DEPTH_BAND_TOP:     float       = 300.0
-const DEPTH_BAND_BOTTOM:  float       = 600.0
+const DEPTH_BAND_TOP:     float       = 350.0
+const DEPTH_BAND_BOTTOM:  float       = 650.0
 const ZONE_WIDTH:         float       = 1280.0
 
 

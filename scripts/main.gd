@@ -17,6 +17,7 @@ const ZONE_SCENES := {
 # Onready nodes
 # ---------------------------------------------------------------------------
 
+@onready var camera: Camera2D              = $Camera2D
 @onready var hud: CanvasLayer              = $HUD
 @onready var zone_nav: ZoneNav             = $ZoneNav
 @onready var buddy_info_card: PanelContainer = $BuddyInfoCard
@@ -67,7 +68,22 @@ func _ready() -> void:
 # Input
 # ---------------------------------------------------------------------------
 
+const ZOOM_MIN := 0.5
+const ZOOM_MAX := 3.0
+const ZOOM_STEP := 0.1
+
 func _input(event: InputEvent) -> void:
+	# Scroll wheel zoom
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			_zoom_camera(ZOOM_STEP)
+			get_viewport().set_input_as_handled()
+			return
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			_zoom_camera(-ZOOM_STEP)
+			get_viewport().set_input_as_handled()
+			return
+
 	if event is InputEventKey and event.pressed and not event.echo:
 		# Don't capture shortcuts while a text field is focused
 		var focus_owner := get_viewport().gui_get_focus_owner()
@@ -85,6 +101,11 @@ func _input(event: InputEvent) -> void:
 				decoration_shop.current_zone_id = _current_zone.zone_id if _current_zone else "meadow"
 				decoration_shop.toggle()
 				get_viewport().set_input_as_handled()
+
+
+func _zoom_camera(step: float) -> void:
+	var new_zoom := clampf(camera.zoom.x + step, ZOOM_MIN, ZOOM_MAX)
+	camera.zoom = Vector2(new_zoom, new_zoom)
 
 
 # ---------------------------------------------------------------------------
