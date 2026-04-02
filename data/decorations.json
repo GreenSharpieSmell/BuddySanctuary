@@ -1,0 +1,14 @@
+{
+  "decorations": [
+    {"id": "cushion", "name": "Cozy Cushion", "cost": 50, "unlock_zone": "meadow", "type": "furniture", "behavior": "nap"},
+    {"id": "lamp", "name": "Warm Lamp", "cost": 75, "unlock_zone": "meadow", "type": "furniture", "behavior": "bask"},
+    {"id": "bush", "name": "Hiding Bush", "cost": 40, "unlock_zone": "meadow", "type": "furniture", "behavior": "hide"},
+    {"id": "bench", "name": "Buddy Bench", "cost": 80, "unlock_zone": "meadow", "type": "furniture", "behavior": "sit"},
+    {"id": "blanket", "name": "Snug Blanket", "cost": 60, "unlock_zone": "burrow", "type": "furniture", "behavior": "nap"},
+    {"id": "mushroom_lamp", "name": "Mushroom Lamp", "cost": 100, "unlock_zone": "mushroom_grotto", "type": "furniture", "behavior": "bask"},
+    {"id": "crystal_bench", "name": "Crystal Bench", "cost": 120, "unlock_zone": "crystal_cave", "type": "furniture", "behavior": "sit"},
+    {"id": "ball", "name": "Bouncy Ball", "cost": 45, "unlock_zone": "meadow", "type": "toy", "behavior": "play"},
+    {"id": "telescope", "name": "Tiny Telescope", "cost": 90, "unlock_zone": "canopy", "type": "furniture", "behavior": "inspect"},
+    {"id": "lily_pad", "name": "Lily Pad Seat", "cost": 70, "unlock_zone": "pond", "type": "furniture", "behavior": "sit"}
+  ]
+}

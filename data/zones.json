@@ -1,0 +1,10 @@
+{
+  "zones": [
+    {"id": "meadow", "name": "The Meadow", "unlock_at": 0, "vibe": "warm"},
+    {"id": "burrow", "name": "The Burrow", "unlock_at": 10, "vibe": "cozy"},
+    {"id": "pond", "name": "The Pond", "unlock_at": 20, "vibe": "wet"},
+    {"id": "mushroom_grotto", "name": "The Mushroom Grotto", "unlock_at": 35, "vibe": "mysterious"},
+    {"id": "canopy", "name": "The Canopy", "unlock_at": 50, "vibe": "breezy"},
+    {"id": "crystal_cave", "name": "The Crystal Cave", "unlock_at": 75, "vibe": "sparkly"}
+  ]
+}
