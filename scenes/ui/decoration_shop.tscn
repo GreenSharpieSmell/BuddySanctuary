@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://decoration_shop"]
+
+[ext_resource type="Script" path="res://scripts/ui/decoration_shop.gd" id="1_deco_shop"]
+
+[node name="DecorationShop" type="PanelContainer"]
+script = ExtResource("1_deco_shop")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -340.0
+offset_right = 220.0
+offset_bottom = -20.0
+custom_minimum_size = Vector2(440, 320)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Decoration Shop"
+horizontal_alignment = 1
+
+[node name="StardustLabel" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Stardust: 0"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 220)
+
+[node name="ItemList" type="VBoxContainer" parent="VBox/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
