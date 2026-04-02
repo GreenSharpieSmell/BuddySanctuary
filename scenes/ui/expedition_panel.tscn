@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://expedition_panel"]
+
+[ext_resource type="Script" path="res://scripts/ui/expedition_panel.gd" id="1_expedition_panel"]
+
+[node name="ExpeditionPanel" type="PanelContainer"]
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -280.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 220.0
+script = ExtResource("1_expedition_panel")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="VBox"]
+text = "Expeditions"
+
+[node name="AvailableLabel" type="Label" parent="VBox"]
+text = "Expedition Slots: 0 / 1"
+
+[node name="SlotContainer" type="VBoxContainer" parent="VBox"]
