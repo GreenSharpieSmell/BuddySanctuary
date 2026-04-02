@@ -1,0 +1,64 @@
+{
+  "slots": {
+    "head": [
+      {
+        "id": "flower_crown",
+        "texture": "res://assets/sprites/accessories/head/flower_crown.png",
+        "rarity": "common"
+      },
+      {
+        "id": "wizard_hat",
+        "texture": "res://assets/sprites/accessories/head/wizard_hat.png",
+        "rarity": "rare"
+      }
+    ],
+    "neck": [
+      {
+        "id": "ribbon_bow",
+        "texture": "res://assets/sprites/accessories/neck/ribbon_bow.png",
+        "rarity": "common"
+      },
+      {
+        "id": "gem_necklace",
+        "texture": "res://assets/sprites/accessories/neck/gem_necklace.png",
+        "rarity": "epic"
+      }
+    ],
+    "held": [
+      {
+        "id": "tiny_lantern",
+        "texture": "res://assets/sprites/accessories/held/tiny_lantern.png",
+        "rarity": "uncommon"
+      },
+      {
+        "id": "leaf_fan",
+        "texture": "res://assets/sprites/accessories/held/leaf_fan.png",
+        "rarity": "common"
+      }
+    ],
+    "back": [
+      {
+        "id": "mini_backpack",
+        "texture": "res://assets/sprites/accessories/back/mini_backpack.png",
+        "rarity": "common"
+      },
+      {
+        "id": "fairy_wings",
+        "texture": "res://assets/sprites/accessories/back/fairy_wings.png",
+        "rarity": "rare"
+      }
+    ],
+    "feet": [
+      {
+        "id": "tiny_boots",
+        "texture": "res://assets/sprites/accessories/feet/tiny_boots.png",
+        "rarity": "common"
+      },
+      {
+        "id": "roller_skates",
+        "texture": "res://assets/sprites/accessories/feet/roller_skates.png",
+        "rarity": "uncommon"
+      }
+    ]
+  }
+}

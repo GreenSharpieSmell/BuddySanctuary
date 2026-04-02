@@ -1,0 +1,19 @@
+{
+  "parts": [
+    {
+      "id": "dot_eyes",
+      "texture": "res://assets/sprites/eyes/dot_eyes.png",
+      "rarity": "common"
+    },
+    {
+      "id": "wide_eyes",
+      "texture": "res://assets/sprites/eyes/wide_eyes.png",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "starry_eyes",
+      "texture": "res://assets/sprites/eyes/starry_eyes.png",
+      "rarity": "legendary"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "parts": [
+    {
+      "id": "round_blobby",
+      "texture": "res://assets/sprites/bodies/round_blobby.png",
+      "rarity": "common",
+      "anchors": {
+        "eyes":     [32, 18],
+        "mouth":    [32, 28],
+        "acc_head": [32,  8],
+        "acc_neck": [32, 24],
+        "acc_held": [28, 32],
+        "acc_back": [32, 20],
+        "acc_feet": [32, 44]
+      }
+    },
+    {
+      "id": "pudgy_square",
+      "texture": "res://assets/sprites/bodies/pudgy_square.png",
+      "rarity": "common",
+      "anchors": {
+        "eyes":     [32, 16],
+        "mouth":    [32, 26],
+        "acc_head": [32,  6],
+        "acc_neck": [32, 22],
+        "acc_held": [26, 34],
+        "acc_back": [32, 18],
+        "acc_feet": [32, 46]
+      }
+    },
+    {
+      "id": "lanky_sprout",
+      "texture": "res://assets/sprites/bodies/lanky_sprout.png",
+      "rarity": "uncommon",
+      "anchors": {
+        "eyes":     [32, 14],
+        "mouth":    [32, 24],
+        "acc_head": [32,  4],
+        "acc_neck": [32, 20],
+        "acc_held": [24, 36],
+        "acc_back": [32, 16],
+        "acc_feet": [32, 50]
+      }
+    }
+  ]
+}

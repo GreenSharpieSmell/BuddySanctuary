@@ -1,0 +1,19 @@
+{
+  "parts": [
+    {
+      "id": "simple_smile",
+      "texture": "res://assets/sprites/mouths/simple_smile.png",
+      "rarity": "common"
+    },
+    {
+      "id": "toothy_grin",
+      "texture": "res://assets/sprites/mouths/toothy_grin.png",
+      "rarity": "common"
+    },
+    {
+      "id": "pout",
+      "texture": "res://assets/sprites/mouths/pout.png",
+      "rarity": "rare"
+    }
+  ]
+}
