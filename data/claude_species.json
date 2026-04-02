@@ -1,0 +1,94 @@
+{
+  "species": [
+    {
+      "id": "axolotl",
+      "texture": "res://assets/sprites/claude_species/axolotl.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.2, "energy": 0.5, "warmth": 0.8, "social": 0.8}
+    },
+    {
+      "id": "blob",
+      "texture": "res://assets/sprites/claude_species/blob.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.5, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "cactus",
+      "texture": "res://assets/sprites/claude_species/cactus.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.5, "warmth": 0.8, "social": 0.2}
+    },
+    {
+      "id": "capybara",
+      "texture": "res://assets/sprites/claude_species/capybara.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.2, "warmth": 0.5, "social": 0.8}
+    },
+    {
+      "id": "cat",
+      "texture": "res://assets/sprites/claude_species/cat.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.8, "energy": 0.5, "warmth": 0.5, "social": 0.2}
+    },
+    {
+      "id": "chonk",
+      "texture": "res://assets/sprites/claude_species/chonk.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.2, "warmth": 0.8, "social": 0.5}
+    },
+    {
+      "id": "dragon",
+      "texture": "res://assets/sprites/claude_species/dragon.png",
+      "personality": {"curiosity": 0.8, "shyness": 0.5, "energy": 0.9, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "duck",
+      "texture": "res://assets/sprites/claude_species/duck.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.5, "warmth": 0.5, "social": 0.7}
+    },
+    {
+      "id": "ghost",
+      "texture": "res://assets/sprites/claude_species/ghost.png",
+      "personality": {"curiosity": 0.8, "shyness": 0.8, "energy": 0.5, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "goose",
+      "texture": "res://assets/sprites/claude_species/goose.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.1, "energy": 0.9, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "mushroom",
+      "texture": "res://assets/sprites/claude_species/mushroom.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.8, "energy": 0.2, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "octopus",
+      "texture": "res://assets/sprites/claude_species/octopus.png",
+      "personality": {"curiosity": 0.9, "shyness": 0.5, "energy": 0.5, "warmth": 0.5, "social": 0.8}
+    },
+    {
+      "id": "owl",
+      "texture": "res://assets/sprites/claude_species/owl.png",
+      "personality": {"curiosity": 0.8, "shyness": 0.5, "energy": 0.2, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "penguin",
+      "texture": "res://assets/sprites/claude_species/penguin.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.5, "warmth": 0.5, "social": 0.7}
+    },
+    {
+      "id": "rabbit",
+      "texture": "res://assets/sprites/claude_species/rabbit.png",
+      "personality": {"curiosity": 0.8, "shyness": 0.5, "energy": 0.9, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "robot",
+      "texture": "res://assets/sprites/claude_species/robot.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.5, "warmth": 0.2, "social": 0.5}
+    },
+    {
+      "id": "snail",
+      "texture": "res://assets/sprites/claude_species/snail.png",
+      "personality": {"curiosity": 0.2, "shyness": 0.5, "energy": 0.1, "warmth": 0.5, "social": 0.5}
+    },
+    {
+      "id": "turtle",
+      "texture": "res://assets/sprites/claude_species/turtle.png",
+      "personality": {"curiosity": 0.5, "shyness": 0.5, "energy": 0.2, "warmth": 0.8, "social": 0.5}
+    }
+  ]
+}
