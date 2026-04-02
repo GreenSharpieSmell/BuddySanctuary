@@ -37,7 +37,7 @@ signal buddy_clicked(buddy_data: BuddyData)
 const BUDDY_SCENE:        PackedScene = preload("res://scenes/buddy/buddy.tscn")
 const DEPTH_BAND_TOP:     float       = 300.0
 const DEPTH_BAND_BOTTOM:  float       = 600.0
-const ZONE_WIDTH:         float       = 1920.0
+const ZONE_WIDTH:         float       = 1280.0
 
 
 # ---------------------------------------------------------------------------
@@ -52,8 +52,17 @@ var _buddy_sprites: Dictionary = {}  # buddy_id (String) -> BuddySprite node
 # ---------------------------------------------------------------------------
 
 func _ready() -> void:
+	_load_background()
 	_populate_buddies()
 	_populate_decorations()
+
+
+func _load_background() -> void:
+	var bg_path := "res://assets/environments/placeholder/%s_bg.png" % zone_id
+	if ResourceLoader.exists(bg_path):
+		var bg_sprite: Sprite2D = $ParallaxBackground/Layer1/BG
+		bg_sprite.texture = load(bg_path)
+		bg_sprite.centered = false  # position from top-left
 
 
 # ---------------------------------------------------------------------------

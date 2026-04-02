@@ -216,12 +216,17 @@ func _show_pet_reaction() -> void:
 # ---------------------------------------------------------------------------
 
 ## Converts an anchor array [x, y] from the body definition into a local
-## Vector2 position for a child sprite.
+## Vector2 position for a child sprite.  Anchors are authored as pixel
+## coords in a 64x64 canvas (top-left origin), but Godot centres sprites,
+## so we shift by half the body size.
 func _anchor_to_position(anchors: Dictionary, key: String) -> Vector2:
 	if not anchors.has(key):
 		return Vector2.ZERO
 	var arr: Array = anchors[key]
-	return Vector2(float(arr[0]), float(arr[1]))
+	# Body sprites are 64x64, centered by Godot → origin is at (32, 32).
+	# Anchor values are authored relative to the top-left corner, so subtract
+	# the center offset to get the correct child-sprite local position.
+	return Vector2(float(arr[0]) - 32.0, float(arr[1]) - 32.0)
 
 
 func _load_texture(path: String) -> Texture2D:
