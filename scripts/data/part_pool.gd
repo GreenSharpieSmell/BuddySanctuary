@@ -128,6 +128,27 @@ func get_body(index: int) -> Dictionary:
 	return _bodies[index]
 
 
+func get_eyes(index: int) -> Dictionary:
+	return _eyes[index]
+
+
+func get_mouth(index: int) -> Dictionary:
+	return _mouths[index]
+
+
+## Returns accessory by slot name and index.
+## Slot names: "head", "neck", "held", "back", "feet"
+func get_accessory(slot_name: String, index: int) -> Dictionary:
+	if not _accessories.has(slot_name):
+		push_error("PartPool: unknown accessory slot '%s'" % slot_name)
+		return {}
+	var slot: Array[Dictionary] = _accessories[slot_name]
+	if index < 0 or index >= slot.size():
+		push_error("PartPool: accessory index %d out of range for slot '%s'" % [index, slot_name])
+		return {}
+	return slot[index]
+
+
 # ---------------------------------------------------------------------------
 # Weighted random picks
 # ---------------------------------------------------------------------------

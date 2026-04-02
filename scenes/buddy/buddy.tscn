@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://buddy_scene"]
+
+[ext_resource type="Script" path="res://scripts/zones/buddy_sprite.gd" id="1_buddy_sprite"]
+
+[node name="Buddy" type="Node2D"]
+script = ExtResource("1_buddy_sprite")
+
+[node name="Body" type="Sprite2D" parent="."]
+
+[node name="BodyAccent" type="Sprite2D" parent="."]
+
+[node name="Eyes" type="Sprite2D" parent="."]
+
+[node name="Mouth" type="Sprite2D" parent="."]
+
+[node name="AccHead" type="Sprite2D" parent="."]
+
+[node name="AccNeck" type="Sprite2D" parent="."]
+
+[node name="AccHeld" type="Sprite2D" parent="."]
+
+[node name="AccBack" type="Sprite2D" parent="."]
+
+[node name="AccFeet" type="Sprite2D" parent="."]
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="ClickShape" type="CollisionShape2D" parent="ClickArea"]
+
+[node name="HeartParticles" type="GPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+
+[node name="ShinyShimmer" type="GPUParticles2D" parent="."]
+emitting = false
