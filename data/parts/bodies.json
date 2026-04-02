@@ -5,13 +5,13 @@
       "texture": "res://assets/sprites/bodies/round_blobby.png",
       "rarity": "common",
       "anchors": {
-        "eyes":     [32, 18],
-        "mouth":    [32, 28],
-        "acc_head": [32,  8],
-        "acc_neck": [32, 24],
-        "acc_held": [28, 32],
-        "acc_back": [32, 20],
-        "acc_feet": [32, 44]
+        "eyes":     [0, -8],
+        "mouth":    [0, 2],
+        "acc_head": [0, -26],
+        "acc_neck": [0, 8],
+        "acc_held": [22, 4],
+        "acc_back": [-4, -8],
+        "acc_feet": [0, 24]
       }
     },
     {
@@ -19,13 +19,13 @@
       "texture": "res://assets/sprites/bodies/pudgy_square.png",
       "rarity": "common",
       "anchors": {
-        "eyes":     [32, 16],
-        "mouth":    [32, 26],
-        "acc_head": [32,  6],
-        "acc_neck": [32, 22],
-        "acc_held": [26, 34],
-        "acc_back": [32, 18],
-        "acc_feet": [32, 46]
+        "eyes":     [0, -10],
+        "mouth":    [0, 0],
+        "acc_head": [0, -28],
+        "acc_neck": [0, 6],
+        "acc_held": [22, 4],
+        "acc_back": [-4, -10],
+        "acc_feet": [0, 24]
       }
     },
     {
@@ -33,13 +33,13 @@
       "texture": "res://assets/sprites/bodies/lanky_sprout.png",
       "rarity": "uncommon",
       "anchors": {
-        "eyes":     [32, 14],
-        "mouth":    [32, 24],
-        "acc_head": [32,  4],
-        "acc_neck": [32, 20],
-        "acc_held": [24, 36],
-        "acc_back": [32, 16],
-        "acc_feet": [32, 50]
+        "eyes":     [0, -12],
+        "mouth":    [0, -2],
+        "acc_head": [0, -28],
+        "acc_neck": [0, 4],
+        "acc_held": [20, 6],
+        "acc_back": [-4, -12],
+        "acc_feet": [0, 26]
       }
     }
   ]
