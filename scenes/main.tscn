@@ -1,10 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://main"]
+[gd_scene load_steps=9 format=3 uid="uid://main"]
 
-[ext_resource type="PackedScene" path="res://scenes/zones/meadow.tscn" id="1_meadow"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" uid="uid://meadow" path="res://scenes/zones/meadow.tscn" id="2_meadow"]
+[ext_resource type="PackedScene" uid="uid://hud" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" uid="uid://zone_nav" path="res://scenes/ui/zone_nav.tscn" id="4_zone_nav"]
+[ext_resource type="PackedScene" uid="uid://buddy_info_card" path="res://scenes/ui/buddy_info_card.tscn" id="5_buddy_info_card"]
+[ext_resource type="PackedScene" uid="uid://expedition_panel" path="res://scenes/ui/expedition_panel.tscn" id="6_expedition_panel"]
+[ext_resource type="PackedScene" uid="uid://decoration_shop" path="res://scenes/ui/decoration_shop.tscn" id="7_decoration_shop"]
+[ext_resource type="PackedScene" uid="uid://welcome_back" path="res://scenes/ui/welcome_back.tscn" id="8_welcome_back"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_main")
 
-[node name="Meadow" parent="." instance=ExtResource("1_meadow")]
+[node name="Meadow" parent="." instance=ExtResource("2_meadow")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="ZoneNav" parent="." instance=ExtResource("4_zone_nav")]
+
+[node name="BuddyInfoCard" parent="." instance=ExtResource("5_buddy_info_card")]
+
+[node name="ExpeditionPanel" parent="." instance=ExtResource("6_expedition_panel")]
+
+[node name="DecorationShop" parent="." instance=ExtResource("7_decoration_shop")]
+
+[node name="WelcomeBack" parent="." instance=ExtResource("8_welcome_back")]

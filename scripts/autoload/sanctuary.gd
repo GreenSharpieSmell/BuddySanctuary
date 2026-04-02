@@ -27,11 +27,14 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 
 # ---------------------------------------------------------------------------
-# Private timers
+# Private timers / offline catch-up
 # ---------------------------------------------------------------------------
 
 var _autosave_timer: float = 0.0
 var _passive_stardust_timer: float = 0.0
+
+## Filled by _handle_offline_catchup(); consumed once by main.gd to show WelcomeBack.
+var _pending_catchup: Dictionary = {}
 
 
 # ---------------------------------------------------------------------------
@@ -150,6 +153,27 @@ func _handle_offline_catchup() -> void:
 	if earned > 0:
 		progression.earn_stardust(earned)
 		print("[Sanctuary] Offline catch-up: %.0fs elapsed, +%d stardust." % [elapsed, earned])
+
+	# Store for main.gd to display via WelcomeBack — only if meaningful time elapsed
+	if elapsed >= 60.0:
+		_pending_catchup = {
+			"elapsed_seconds": elapsed,
+			"stardust_earned": earned,
+			"new_buddies": [],
+			"completed_expeditions": [],
+		}
+
+
+## Returns true if there is unseen offline catch-up data waiting to be shown.
+func has_pending_catchup() -> bool:
+	return not _pending_catchup.is_empty()
+
+
+## Return and clear the pending catch-up data. Call once from main.gd _ready().
+func consume_pending_catchup() -> Dictionary:
+	var data := _pending_catchup.duplicate()
+	_pending_catchup = {}
+	return data
 
 
 # ---------------------------------------------------------------------------

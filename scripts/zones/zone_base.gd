@@ -7,6 +7,14 @@ extends Node2D
 
 
 # ---------------------------------------------------------------------------
+# Signals
+# ---------------------------------------------------------------------------
+
+## Emitted when the player clicks on a buddy. Connect in main.gd to show the info card.
+signal buddy_clicked(buddy_data: BuddyData)
+
+
+# ---------------------------------------------------------------------------
 # Exports
 # ---------------------------------------------------------------------------
 
@@ -102,4 +110,4 @@ func _populate_decorations() -> void:
 # ---------------------------------------------------------------------------
 
 func _on_buddy_clicked(buddy_data: BuddyData) -> void:
-	print("Clicked: %s (%s)" % [buddy_data.buddy_name, buddy_data.species])
+	buddy_clicked.emit(buddy_data)
