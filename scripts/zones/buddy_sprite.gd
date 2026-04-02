@@ -37,6 +37,7 @@ signal clicked(buddy_data: BuddyData)
 
 var buddy_data: BuddyData
 var _part_pool: PartPool
+var brain := BuddyBrain.new()
 
 
 # ---------------------------------------------------------------------------
@@ -61,6 +62,7 @@ const ACCESSORY_SLOTS: Array[String] = ["head", "neck", "held", "back", "feet"]
 func setup(data: BuddyData, part_pool: PartPool) -> void:
 	buddy_data = data
 	_part_pool  = part_pool
+	brain.setup(data)
 	_assemble_appearance()
 	_update_depth_sort()
 	shiny_shimmer.emitting  = data.shiny
@@ -156,6 +158,36 @@ func _update_depth_sort() -> void:
 
 func _ready() -> void:
 	click_area.input_event.connect(_on_click)
+
+
+func _process(delta: float) -> void:
+	if buddy_data == null:
+		return
+
+	brain.tick(delta, Sanctuary.rng)
+
+	if brain.current_action == BuddyBrain.Action.WANDERING:
+		# Pick a new target when we have none or have reached the current one.
+		if brain.target_position == Vector2.ZERO or \
+				position.distance_to(brain.target_position) < 5.0:
+			var tx: float = Sanctuary.rng.randf_range(64.0, ZoneBase.ZONE_WIDTH - 64.0)
+			var ty: float = Sanctuary.rng.randf_range(
+				ZoneBase.DEPTH_BAND_TOP, ZoneBase.DEPTH_BAND_BOTTOM
+			)
+			brain.target_position = Vector2(tx, ty)
+
+		# Move toward target.
+		var direction: Vector2 = (brain.target_position - position).normalized()
+		position += direction * brain.move_speed * delta
+
+		# Flip horizontal sprite based on movement direction.
+		if direction.x != 0.0:
+			body_sprite.flip_h = direction.x < 0.0
+
+		# Clamp to depth band.
+		position.y = clampf(position.y, ZoneBase.DEPTH_BAND_TOP, ZoneBase.DEPTH_BAND_BOTTOM)
+
+	_update_depth_sort()
 
 
 func _on_click(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
