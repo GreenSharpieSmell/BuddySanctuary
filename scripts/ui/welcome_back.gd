@@ -71,17 +71,23 @@ func _build_text(
 
 	# Completed expeditions
 	for expedition in completed_expeditions:
-		var buddy_id: String = expedition.get("buddy_id", "A buddy")
-		var result_type: String = expedition.get("result_type", "")
+		var buddy_id: String = expedition.get("buddy_id", "")
+		# Look up the buddy's actual name from the roster
+		var display_name := "A buddy"
+		if buddy_id != "":
+			var buddy: BuddyData = Sanctuary.buddy_roster.get_buddy(buddy_id)
+			if buddy:
+				display_name = buddy.buddy_name
+		var result_type: String = expedition.get("type", "")
 		match result_type:
 			"blob":
-				text += "  %s came back from vacation with a new friend!\n" % buddy_id
+				text += "  %s came back from vacation with a new friend!\n" % display_name
 			"claude_buddy":
-				text += "  %s met a rare buddy on vacation!\n" % buddy_id
+				text += "  %s met a rare buddy on vacation!\n" % display_name
 			"decoration":
-				text += "  %s found a cute trinket!\n" % buddy_id
+				text += "  %s found a cute trinket!\n" % display_name
 			_:
-				text += "  %s had a lovely time.\n" % buddy_id
+				text += "  %s had a lovely time.\n" % display_name
 
 	# New buddies
 	if new_buddies.size() > 0:
