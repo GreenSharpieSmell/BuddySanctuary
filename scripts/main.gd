@@ -31,6 +31,8 @@ const ZONE_SCENES := {
 # ---------------------------------------------------------------------------
 
 var _current_zone: ZoneBase = null
+var _panning: bool = false
+var _pan_start: Vector2 = Vector2.ZERO
 
 
 # ---------------------------------------------------------------------------
@@ -74,15 +76,30 @@ const ZOOM_STEP := 0.1
 
 func _input(event: InputEvent) -> void:
 	# Scroll wheel zoom
-	if event is InputEventMouseButton and event.pressed:
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			_zoom_camera(ZOOM_STEP)
-			get_viewport().set_input_as_handled()
-			return
-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			_zoom_camera(-ZOOM_STEP)
-			get_viewport().set_input_as_handled()
-			return
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				_zoom_camera(ZOOM_STEP)
+				get_viewport().set_input_as_handled()
+				return
+			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				_zoom_camera(-ZOOM_STEP)
+				get_viewport().set_input_as_handled()
+				return
+			elif event.button_index == MOUSE_BUTTON_RIGHT:
+				_panning = true
+				_pan_start = event.position
+		else:
+			if event.button_index == MOUSE_BUTTON_RIGHT:
+				_panning = false
+
+	# Click-drag pan
+	if event is InputEventMouseMotion and _panning:
+		var delta: Vector2 = event.position - _pan_start
+		_pan_start = event.position
+		camera.position -= delta / camera.zoom
+		get_viewport().set_input_as_handled()
+		return
 
 	if event is InputEventKey and event.pressed and not event.echo:
 		# Don't capture shortcuts while a text field is focused
