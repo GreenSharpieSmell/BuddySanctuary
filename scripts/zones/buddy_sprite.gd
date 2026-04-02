@@ -64,9 +64,16 @@ func setup(data: BuddyData, part_pool: PartPool) -> void:
 	_part_pool  = part_pool
 	brain.setup(data)
 	_assemble_appearance()
+	_setup_click_area()
 	_update_depth_sort()
 	shiny_shimmer.emitting  = data.shiny
 	heart_particles.emitting = false
+
+
+func _setup_click_area() -> void:
+	var shape := RectangleShape2D.new()
+	shape.size = Vector2(64, 64)
+	$ClickArea/ClickShape.shape = shape
 
 
 # ---------------------------------------------------------------------------

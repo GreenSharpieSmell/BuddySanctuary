@@ -57,6 +57,7 @@ func _build_text(
 
 	# Time-away line
 	var total_minutes: int = int(elapsed_seconds / 60.0)
+	@warning_ignore("integer_division")
 	var hours: int = total_minutes / 60
 	var minutes: int = total_minutes % 60
 	if hours >= 1:
