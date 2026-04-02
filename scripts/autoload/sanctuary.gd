@@ -154,13 +154,24 @@ func _handle_offline_catchup() -> void:
 		progression.earn_stardust(earned)
 		print("[Sanctuary] Offline catch-up: %.0fs elapsed, +%d stardust." % [elapsed, earned])
 
+	# Resolve any expeditions that completed while offline
+	var completed: Array[Dictionary] = expedition_manager.check_completed(rng)
+	var new_buddy_names: Array = []
+	for result in completed:
+		_handle_expedition_result(result)
+		if result.get("type", "") in ["blob", "claude_buddy"]:
+			# The last buddy added is the new one
+			var all_buddies := buddy_roster.get_all()
+			if all_buddies.size() > 0:
+				new_buddy_names.append(all_buddies[-1].buddy_name)
+
 	# Store for main.gd to display via WelcomeBack — only if meaningful time elapsed
 	if elapsed >= 60.0:
 		_pending_catchup = {
 			"elapsed_seconds": elapsed,
 			"stardust_earned": earned,
-			"new_buddies": [],
-			"completed_expeditions": [],
+			"new_buddies": new_buddy_names,
+			"completed_expeditions": completed,
 		}
 
 
