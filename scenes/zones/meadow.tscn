@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://meadow"]
+
+[ext_resource type="PackedScene" path="res://scenes/zones/zone_base.tscn" id="1_zone_base"]
+
+[node name="Meadow" instance=ExtResource("1_zone_base")]
+zone_id = "meadow"

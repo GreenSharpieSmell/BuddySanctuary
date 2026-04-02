@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://zone_base"]
+
+[ext_resource type="Script" path="res://scripts/zones/zone_base.gd" id="1_zone_base"]
+
+[node name="ZoneBase" type="Node2D"]
+script = ExtResource("1_zone_base")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="BG" type="Sprite2D" parent="ParallaxBackground/Layer1"]
+
+[node name="DecorationContainer" type="Node2D" parent="."]
+
+[node name="BuddyContainer" type="Node2D" parent="."]
