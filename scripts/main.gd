@@ -33,6 +33,9 @@ const ZONE_SCENES := {
 var _current_zone: ZoneBase = null
 var _panning: bool = false
 var _pan_start: Vector2 = Vector2.ZERO
+var _rename_dialog: AcceptDialog = null
+var _rename_line_edit: LineEdit = null
+var _rename_buddy: BuddyData = null
 
 
 # ---------------------------------------------------------------------------
@@ -48,6 +51,7 @@ func _ready() -> void:
 
 	# Buddy info card signals
 	buddy_info_card.expedition_requested.connect(_on_expedition_requested)
+	buddy_info_card.rename_requested.connect(_on_rename_requested)
 
 	# Wire zone's buddy-clicked into our info card handler
 	_connect_zone_clicks()
@@ -171,10 +175,38 @@ func _show_info_card(buddy_data: BuddyData) -> void:
 func _on_expedition_requested(buddy: BuddyData) -> void:
 	var success: bool = Sanctuary.send_on_expedition(buddy)
 	if success:
-		# Refresh the card so the expedition button disables correctly
-		buddy_info_card.show_buddy(buddy)
+		buddy_info_card.visible = false
+		# Remove buddy sprite from zone (they walked offscreen for vacation)
+		if _current_zone:
+			_current_zone._populate_buddies()
+		print("[Sanctuary] %s left on vacation!" % buddy.buddy_name)
 	else:
-		push_warning("Main: expedition slots full or buddy already on expedition.")
+		print("[Sanctuary] No expedition slots available.")
+
+
+func _on_rename_requested(buddy: BuddyData) -> void:
+	# Show a simple rename dialog
+	if _rename_dialog == null:
+		_rename_dialog = AcceptDialog.new()
+		_rename_dialog.title = "Rename Buddy"
+		_rename_line_edit = LineEdit.new()
+		_rename_line_edit.placeholder_text = "Enter new name..."
+		_rename_dialog.add_child(_rename_line_edit)
+		_rename_dialog.confirmed.connect(_on_rename_confirmed)
+		$UILayer.add_child(_rename_dialog)
+
+	_rename_buddy = buddy
+	_rename_line_edit.text = buddy.buddy_name
+	_rename_dialog.popup_centered(Vector2i(300, 100))
+
+
+func _on_rename_confirmed() -> void:
+	if _rename_buddy and _rename_line_edit:
+		var new_name := _rename_line_edit.text.strip_edges()
+		if not new_name.is_empty():
+			_rename_buddy.buddy_name = new_name
+			buddy_info_card.show_buddy(_rename_buddy)
+			print("[Sanctuary] Renamed to: %s" % new_name)
 
 
 # ---------------------------------------------------------------------------
