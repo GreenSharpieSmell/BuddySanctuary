@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://welcome_back"]
+[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/welcome_back.gd" id="1_welcome_back"]
 

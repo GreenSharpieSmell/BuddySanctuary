@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://decoration_shop"]
+[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/decoration_shop.gd" id="1_deco_shop"]
 

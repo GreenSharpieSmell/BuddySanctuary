@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://buddy_info_card"]
+[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/buddy_info_card.gd" id="1_buddy_info_card"]
 
