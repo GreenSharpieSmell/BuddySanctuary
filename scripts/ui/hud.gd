@@ -28,8 +28,8 @@ func _ready() -> void:
 # ---------------------------------------------------------------------------
 
 ## Update the zone name label.
-func set_zone_name(name: String) -> void:
-	zone_label.text = name
+func set_zone_name(zone_name: String) -> void:
+	zone_label.text = zone_name
 
 
 # ---------------------------------------------------------------------------

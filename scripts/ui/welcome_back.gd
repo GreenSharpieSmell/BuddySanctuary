@@ -56,9 +56,9 @@ func _build_text(
 	var text := "[center][b]Welcome back![/b][/center]\n\n"
 
 	# Time-away line
-	var total_minutes := int(elapsed_seconds / 60.0)
-	var hours := total_minutes / 60
-	var minutes := total_minutes % 60
+	var total_minutes: int = int(elapsed_seconds / 60.0)
+	var hours: int = total_minutes / 60
+	var minutes: int = total_minutes % 60
 	if hours >= 1:
 		text += "You were away for %dh %dm.\n\n" % [hours, minutes]
 	else:
@@ -69,9 +69,9 @@ func _build_text(
 	text += "  +%d stardust collected\n" % stardust_earned
 
 	# Completed expeditions
-	for exp in completed_expeditions:
-		var buddy_id: String = exp.get("buddy_id", "A buddy")
-		var result_type: String = exp.get("result_type", "")
+	for expedition in completed_expeditions:
+		var buddy_id: String = expedition.get("buddy_id", "A buddy")
+		var result_type: String = expedition.get("result_type", "")
 		match result_type:
 			"blob":
 				text += "  %s came back from vacation with a new friend!\n" % buddy_id
